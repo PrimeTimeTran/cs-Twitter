@@ -15,14 +15,16 @@
   <meta property="og:image" content="./images/preview.jpg">
   <meta property="og:url" content="./images/preview.jpg">
 
-  <title>CS - Twitter</title>
+  <title>Bitter All</title>
 </head>
 
 <body class="text-center" data-gr-c-s-loaded="true">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <canvas id="c">
+  </canvas>
+  <div class="cover-container d-flex w-50 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">CS - Twitter</h3>
+        <h3 class="masthead-brand">Bitter All</h3>
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="#">Home</a>
           <a class="nav-link" href="#">Features</a>
@@ -38,11 +40,11 @@
       </h3>
       <p class="lead">Say anything you want.</p>
       <p class="lead">
-        <button class="btn btn-light" onclick="addTweet()">Add Tweet</button>
+        <button class="btn btn-light btn-block" onclick="addTweet()">Add Tweet</button>
       </p>
     </main>
+    <!-- <button onclick="addScript()">Hi</button> -->
     <ul id="tweetList">
-
     </ul>
 
     <footer class="mastfoot mt-auto">
@@ -51,7 +53,6 @@
       </div>
     </footer>
   </div>
-
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -64,7 +65,12 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
   <script src="js/script.js"></script>
+  <script id="la" src="js/explosions.js"></script>
+  <!-- <script id="la" src="js/lines.js"></script> -->
+  <!-- <script id="la" src="js/shadows.js"></script> -->
+  <!-- <script src="js/skyline.js"></script> -->
 </body>
 
 </html>

@@ -70,14 +70,26 @@ const setupApp = () => {
   );
 };
 
-
 const getTweets = async () => {
-  const response = await fetch("https://api.myjson.com/bins/1gwjtm")
-  const data = await response.json()
-  console.log('https://api.myjson.com/bins/1gwjtm', data);
-}
+  const response = await fetch("https://api.myjson.com/bins/1gwjtm");
+  const data = await response.json();
+  console.log("https://api.myjson.com/bins/1gwjtm", data);
+};
+
+setupApp();
+getTweets();
 
 
-
-setupApp()
-getTweets()
+const addScript = () => {
+  document.getElementById("la").remove();
+  var s = document.createElement("script");
+  s.setAttribute(
+    "src",
+    "js/explosions.js"
+  );
+  s.setAttribute(
+    "id",
+    "la"
+  );
+  document.body.appendChild(s);
+};
