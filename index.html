@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="css/colors.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <meta property="og:title" content="Bitter All">
-  <meta property="og:description" content="What you made about? Bitterall">
-  <meta property="og:image" content="./images/preview.jpg">
-  <meta property="og:url" content="./images/preview.jpg">
+  <meta property="og:title" content="Animations Sample - HTML, CSS & ES6">
+  <meta property="og:description"
+    content="Beautifully designed site with animations demonstrating amazing abilitiy of HTML, CSS, and JS.">
+  <meta property="og:image" content="./img/preview.png">
+  <meta property="og:url" content="./img/preview.png">
 
-  <title>Bitter All</title>
+  <title>CS - Animations Sample</title>
 </head>
 
 <body class="text-center" data-gr-c-s-loaded="true">
@@ -25,7 +26,7 @@
   <div class="cover-container d-flex w-50 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">Bitter All</h3>
+        <h3 class="masthead-brand">CS Animations</h3>
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link" href="/?bg=explosions">Explosions</a>
           <a class="nav-link" href="/?bg=lines">Lines</a>
@@ -35,14 +36,20 @@
     </header>
 
     <main role="main" class="inner cover">
-      <h3 class="cover-heading">
-        <div placeholder="Whats on your mind buddy?" contenteditable="true" id="tweetBody">
-        </div>
-      </h3>
-      <p class="lead">Say anything you want.</p>
-      <p class="lead">
-        <button class="btn btn-light btn-block" onclick="addTweet()">Add Tweet</button>
-      </p>
+      <p class="lead typewrite" data-period="2000" data-type='[ 
+            "Ready to change your life?", 
+            "What are you waiting for?", 
+            "Top-Rated Programming Courses Starting September 2019",
+            "Join CoderSchool Today!"
+            ]'>
+        <h3 class="cover-heading">
+          <div placeholder="Whats on your mind buddy?" contenteditable="true" id="tweetBody">
+          </div>
+        </h3>
+
+        <p class="">
+          <button class="btn btn-light btn-block" onclick="addTweet()">Add Tweet</button>
+        </p>
     </main>
 
     <ul id="tweetList">
@@ -68,6 +75,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/typewrite.js"></script>
 </body>
 
 </html>

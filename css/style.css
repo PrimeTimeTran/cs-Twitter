@@ -1,19 +1,18 @@
-  html,
+html,
 body {
   height: 100%;
-
-  background-color: var(--primary-bg); 
+  background-color: var(--primary-bg);
 }
 
 body {
   display: flex;
   color: #fff;
   display: -ms-flexbox;
-  text-shadow: 0 0.05rem 0.1rem var(--text-shadow);
   box-shadow: inset 0 0 5rem var(--text-shadow);
+  text-shadow: 0 0.05rem 0.1rem var(--text-shadow);
 }
 a {
-  color: var(--a);    
+  color: var(--a);
 }
 
 a:focus,
@@ -31,9 +30,9 @@ a:hover {
 }
 
 .cover-container {
+  left: 25vw;
   position: absolute;
   border-radius: 20px;
-  left: 25vw;
 }
 
 .masthead {
@@ -87,12 +86,18 @@ a:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.typewrite {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
 #tweetBody {
   padding: 15px;
   border-radius: 10px;
   border: 1px solid white;
 }
-
 
 [contenteditable="true"]:empty:before {
   display: block;
@@ -139,18 +144,19 @@ ul {
 }
 
 canvas {
-  display: block;
   width: 100vw;
   height: 100vh;
+  display: block;
 }
-body, html {
-  background-color: #000;
-  color: #fff;
-  width: 100%;
-  height: 100%;
+body,
+html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
   overflow: hidden;
+  background-color: #000;
 }
 /* canvas {
   position:absolute;
@@ -158,3 +164,11 @@ body, html {
   left:0;
   z-index: -1;
 } */
+
+.btn {
+  margin-top: 100px;
+}
+
+.btn-block:hover {
+  color: white;
+}
