@@ -32,8 +32,8 @@ const parseAnchor = str => {
 };
 
 const insertLinks = string => {
-  let splitString = string.split(" ");
-  return splitString
+  const words = string.split(" ");
+  return words
     .map(word => {
       const isHashTagged = word[0] === "#";
       return isHashTagged ? `<a href="#">${word}</a>` : parseAnchor(word);
@@ -51,13 +51,45 @@ const addTweet = () => {
   document.getElementById("tweetBody").innerHTML = "";
 };
 
-const setupApp = () => {
+const addScript = val => {
+  var s = document.createElement("script");
+  s.setAttribute("src", `js/${val}.js`);
+  document.body.appendChild(s);
+};
+
+const setBackground = () => {
+  const hasBGChoice = window.location.search.includes("bg");
+  if (hasBGChoice) {
+    const value = window.location.search.split("bg=");
+    addScript(value[1]);
+    if (value[1] == "explosions") {
+      document.getElementsByClassName("nav-link")[0].classList.add("active");
+    } else if (value[1] == "lines") {
+      document.getElementsByClassName("nav-link")[1].classList.add("active");
+    } else if (value[1] == "shadows") {
+      document.getElementsByClassName("nav-link")[2].classList.add("active");
+    }
+  } else {
+    addScript("explosions");
+    document.getElementsByClassName("nav-link")[0].classList.add("active");
+  }
+};
+
+const focusInput = () => {
   const div = document.getElementById("tweetBody");
   setTimeout(() => {
     div.focus();
     document.getElementById("tweetBody").innerHTML = "";
   }, 0);
+};
 
+const getTweets = async () => {
+  const response = await fetch("https://api.myjson.com/bins/1gwjtm");
+  const data = await response.json();
+  console.log("pink catwoman", data);
+};
+
+const parseInput = () => {
   document.getElementById("tweetBody").addEventListener(
     "input",
     e => {
@@ -70,38 +102,11 @@ const setupApp = () => {
   );
 };
 
-const getTweets = async () => {
-  const response = await fetch("https://api.myjson.com/bins/1gwjtm");
-  const data = await response.json();
-  console.log("https://api.myjson.com/bins/1gwjtm", data);
+const setupApp = () => {
+  setBackground();
+  focusInput();
+  getTweets();
+  parseInput();
 };
 
 setupApp();
-getTweets();
-
-
-const addScript = (val) => {
-  var s = document.createElement("script");
-  s.setAttribute(
-    "src",
-    `js/${val}.js`
-  );
-  document.body.appendChild(s);
-};
-
-
-
-const checkIfBackgroundSelected = () => {
-  const hasBGChoice = window.location.search.includes('bg')
-  if (hasBGChoice) {
-    const value = window.location.search.split('bg=')
-    addScript(value[1])
-  } else {
-    addScript('explosions')
-  }
-}
-
-
-checkIfBackgroundSelected()
-
-// window.
