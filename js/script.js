@@ -80,16 +80,28 @@ setupApp();
 getTweets();
 
 
-const addScript = () => {
-  document.getElementById("la").remove();
+const addScript = (val) => {
   var s = document.createElement("script");
   s.setAttribute(
     "src",
-    "js/explosions.js"
-  );
-  s.setAttribute(
-    "id",
-    "la"
+    `js/${val}.js`
   );
   document.body.appendChild(s);
 };
+
+
+
+const checkIfBackgroundSelected = () => {
+  const hasBGChoice = window.location.search.includes('bg')
+  if (hasBGChoice) {
+    const value = window.location.search.split('bg=')
+    addScript(value[1])
+  } else {
+    addScript('explosions')
+  }
+}
+
+
+checkIfBackgroundSelected()
+
+// window.
